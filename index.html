@@ -27,9 +27,6 @@
 
 
       var myGameInstance = null;
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/9test.data",
         frameworkUrl: "Build/9test.framework.js",
@@ -42,7 +39,9 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       }).then((unityInstance)=>{
         myGameInstance = unityInstance;
-        })};
+        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
+
+        });
         var userId = window.Telegram.WebApp.initDataUnsafe.user.id;
 
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
