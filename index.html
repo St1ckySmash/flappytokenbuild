@@ -27,6 +27,8 @@
 
 
       var myGameInstance = null;
+      var script = document.createElement("script");
+      script.src = loaderUrl;
       script.onload = () => {
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/9test.data",
@@ -45,7 +47,7 @@
 
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
 
-
+        document.body.appendChild(script);
 // 
 
 
