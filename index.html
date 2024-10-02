@@ -38,11 +38,21 @@
 
 
 // 
+
   var userId = window.Telegram.WebApp.initDataUnsafe.user.id;
 
   gameInstance.then((unityInstance) => {
-            unityInstance.SendMessage('TELEGRAM', 'MethodName', userId);        
+            unityInstance.SendMessage('TELEGRAM', 'MethodName', '123');        
         });
+
+
+
+
+
+
+
+
+
 
         function sendUserIdToUnity() {
 
@@ -57,7 +67,7 @@
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
-      
+
           gameInstance.then((unityInstance) => {
             unityInstance.SendMessage('TELEGRAM', 'MethodName', userId);        
         });
