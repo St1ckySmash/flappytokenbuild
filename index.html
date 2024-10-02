@@ -39,7 +39,30 @@
 
 // 
   var userId = window.Telegram.WebApp.initDataUnsafe.user.id;
-  unityInstance.SendMessage('TELEGRAM', 'MethodName', userId);
+
+  gameInstance.then((unityInstance) => {
+            unityInstance.SendMessage('TELEGRAM', 'MethodName', userId);        
+        });
+
+        function sendUserIdToUnity() {
+
+          var gameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/9test.data",
+        frameworkUrl: "Build/9test.framework.js",
+        codeUrl: "Build/9test.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "FlappyToken",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+      
+          gameInstance.then((unityInstance) => {
+            unityInstance.SendMessage('TELEGRAM', 'MethodName', userId);        
+        });
+
+    }
 
   window.onload = sendUserIdToUnity;
 
