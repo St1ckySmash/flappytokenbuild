@@ -56,10 +56,11 @@ var        userId="7394867398"
         myGameInstance = unityInstance;
 
       myGameInstance.SendMessage('TELEGRAM', 'MethodName', "324");
-      myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
+      // myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
 
       });
 
+      myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
 
       
 
