@@ -42,16 +42,18 @@
         // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
         // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "456");
         
-        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "213");
         
         // var userId="789"   
         
         Telegram.WebApp.ready();
         const user = Telegram.WebApp.initDataUnsafe.user;
         const userId=user.id
+
+        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "213");
+
         // userId = window.Telegram.WebApp.initDataUnsafe.user.id;
         // if (userId){
-          myGameInstance.SendMessage('TELEGRAM', 'MethodName', "213");
+          // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "213");
 
         // myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
         // }
