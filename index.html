@@ -7,7 +7,7 @@
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=2160 height=4560 tabindex="-1" style="width: 2160px; height: 4560px; background: #231F20"></canvas>
-    <script src="Build/9test.loader.js"></script>
+    <script src="Build/10test.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -25,12 +25,12 @@
       }
 
 
-
       var myGameInstance = null;
+
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/9test.data",
-        frameworkUrl: "Build/9test.framework.js",
-        codeUrl: "Build/9test.wasm",
+        dataUrl: "Build/10test.data",
+        frameworkUrl: "Build/10test.framework.js",
+        codeUrl: "Build/10test.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "FlappyToken",
@@ -51,36 +51,35 @@
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
         unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
         window.unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
+console.log(userId)
+console.log("qw3345r1234")
 
-        // document.body.appendChild(script);
-// 
 
 
-      /*  function sendUserIdToUnity() {
+    //     var script = document.createElement("script");
+    //  script.src = loaderUrl;
+    //  script.onload = () => {
+    //    createUnityInstance(canvas, config, (progress) => {
+    //      progressBarFull.style.width = 100 * progress + "%";
+    //    }).then((unityInstance) => {
+    //    unityInstance.SendMessage("isitaphone", "IsPhoneFunc", 5);
+    //      loadingBar.style.display = "none";
+    //      fullscreenButton.onclick = () => {
+    //        unityInstance.SetFullscreen(1);
+    //      };
+    //    }).catch((message) => {
+    //      alert(message);
+    //    });
+    //  };
+    //  document.body.appendChild(script);
 
-          var gameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/9test.data",
-        frameworkUrl: "Build/9test.framework.js",
-        codeUrl: "Build/9test.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "FlappyToken",
-        productVersion: "1.0",
+
+
+
+
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-
-          gameInstance.then((unityInstance) => {
-            unityInstance.SendMessage('TELEGRAM', 'MethodName', userId);        
-        });
-
-    }
-
-  window.onload = sendUserIdToUnity;
-*/
+    
     </script>
-
-
-
   </body>
 </html>
