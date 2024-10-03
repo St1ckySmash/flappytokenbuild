@@ -38,21 +38,16 @@
 
 
 
-    window.Telegram.WebApp.ready();
+  
 
-    const initData = window.Telegram.WebApp.initDataUnsafe;
 
-    console.log("Init Data Unsafe:", initData);
-
-    const userId = initData.user.id;
-    console.log("User ID:", userId);
-
-    var myGameInstance = null;
 
       var myGameInstance = null;
-      // Telegram.WebApp.ready();
-      const user = window.Telegram.WebApp.initDataUnsafe.user;
-      // var userId=user.id
+
+      window.Telegram.WebApp.ready();
+
+      const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
+      console.log("User ID:", userId);
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/10test.data",
@@ -66,13 +61,8 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       }).then((unityInstance)=>{
 
-       
-
         myGameInstance = unityInstance;
-
-        
-        myGameInstance = unityInstance;
-        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "234");
+        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "234");
 
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
         
