@@ -29,12 +29,6 @@
 
 
 
-  //  window.Telegram.WebApp.ready();
-
-  //  const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
-
-  //  console.log("User ID:", userId);
-
 
 
 
@@ -42,32 +36,27 @@
 
 
 
-      var myGameInstance = null;
 
       window.Telegram.WebApp.ready();
 
-      const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
-      console.log("User ID:", userId);
+      window.Telegram.WebApp.onInitialized(function() {
+        const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
+        console.log("User ID:", userId);
 
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/10test.data",
-        frameworkUrl: "Build/10test.framework.js",
-        codeUrl: "Build/10test.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "FlappyToken",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      }).then((unityInstance)=>{
-
-        myGameInstance = unityInstance;
-        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "234");
-
-        myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
-        
-
+        var myGameInstance = null;
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+          dataUrl: "Build/10test.data",
+          frameworkUrl: "Build/10test.framework.js",
+          codeUrl: "Build/10test.wasm",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "DefaultCompany",
+          productName: "FlappyToken",
+          productVersion: "1.0",
+        }).then((unityInstance)=>{
+          myGameInstance = unityInstance;
+          myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
         });
+      });
 
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
