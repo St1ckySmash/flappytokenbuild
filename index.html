@@ -39,9 +39,10 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       }).then((unityInstance)=>{
         myGameInstance = unityInstance;
-        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
-        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "456");
-        var userId = window.Telegram.WebApp.initDataUnsafe.user.id;
+        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
+        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "456");
+        var userId="789"        
+        userId = window.Telegram.WebApp.initDataUnsafe.user.id;
         if (userId)
       {
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
