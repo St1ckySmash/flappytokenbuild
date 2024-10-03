@@ -29,7 +29,7 @@
       var myGameInstance = null;
       // Telegram.WebApp.ready();
       const user = window.Telegram.WebApp.initDataUnsafe.user;
-      const userId=user.id
+      var userId=user.id
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/10test.data",
         frameworkUrl: "Build/10test.framework.js",
@@ -48,6 +48,7 @@
         // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
         // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "456");
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', "213");
+        userId="789"
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
         
         
