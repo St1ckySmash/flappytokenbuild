@@ -29,13 +29,25 @@
 
 
 
-   window.Telegram.WebApp.ready();
+  //  window.Telegram.WebApp.ready();
 
-   const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
+  //  const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
 
-   console.log("User ID:", userId);
+  //  console.log("User ID:", userId);
 
 
+
+
+    window.Telegram.WebApp.ready();
+
+    const initData = window.Telegram.WebApp.initDataUnsafe;
+
+    console.log("Init Data Unsafe:", initData);
+
+    const userId = initData.user.id;
+    console.log("User ID:", userId);
+
+    var myGameInstance = null;
 
       var myGameInstance = null;
       // Telegram.WebApp.ready();
@@ -57,11 +69,10 @@
        
 
         myGameInstance = unityInstance;
-        console.log("User ID:", userId);
 
-        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "213");
-        // userId="789"
-        console.log("Sending ID:", userId);
+        
+        myGameInstance = unityInstance;
+        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "234");
 
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
         
