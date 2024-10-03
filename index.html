@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script> 
+
     <title>Unity WebGL Player | FlappyToken</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=2160 height=4560 tabindex="-1" style="width: 2160px; height: 4560px; background: #231F20"></canvas>
     <script src="Build/10test.loader.js"></script>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -30,6 +32,7 @@
       // Telegram.WebApp.ready();
       const user = window.Telegram.WebApp.initDataUnsafe.user;
       var userId=user.id
+
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/10test.data",
         frameworkUrl: "Build/10test.framework.js",
