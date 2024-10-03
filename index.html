@@ -57,65 +57,16 @@
        
 
         myGameInstance = unityInstance;
-        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
-        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "456");
+        console.log("User ID:", userId);
+
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', "213");
         // userId="789"
+        console.log("Sending ID:", userId);
+
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
         
-        
-        // var userId="789"   
-        
-       
-
-
-        // userId = window.Telegram.WebApp.initDataUnsafe.user.id;
-        // if (userId){
-          // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "213");
-
-        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
-        // }
-        // else{
-        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "465");
-
-        // }
-
-        // window.myGameInstance = unityInstance;
-        // window.unityInstance = unityInstance;
-        // unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
-        // window.unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
 
         });
-        // var userId = window.Telegram.WebApp.initDataUnsafe.user.id;
-
-        // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
-        // unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
-        // window.unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
-        console.log(userId)
-        console.log("qw3345r1234")
-        log(userId)
-        log("qw3345r1234")
-
-    //     var script = document.createElement("script");
-    //  script.src = loaderUrl;
-    //  script.onload = () => {
-    //    createUnityInstance(canvas, config, (progress) => {
-    //      progressBarFull.style.width = 100 * progress + "%";
-    //    }).then((unityInstance) => {
-    //    unityInstance.SendMessage("isitaphone", "IsPhoneFunc", 5);
-    //      loadingBar.style.display = "none";
-    //      fullscreenButton.onclick = () => {
-    //        unityInstance.SetFullscreen(1);
-    //      };
-    //    }).catch((message) => {
-    //      alert(message);
-    //    });
-    //  };
-    //  document.body.appendChild(script);
-
-
-
-
 
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
