@@ -43,11 +43,14 @@
         // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "456");
         var userId="789"        
         userId = window.Telegram.WebApp.initDataUnsafe.user.id;
-        if (userId)
-      {
+        if (userId){
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
+        }
+        else{
+        myGameInstance.SendMessage('TELEGRAM', 'MethodName', "465");
 
-      }
+        }
+
         // window.myGameInstance = unityInstance;
         // window.unityInstance = unityInstance;
         // unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
