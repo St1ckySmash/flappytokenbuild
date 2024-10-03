@@ -43,13 +43,16 @@
         window.myGameInstance = unityInstance;
         window.unityInstance = unityInstance;
         unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
+        window.unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
 
         });
         var userId = window.Telegram.WebApp.initDataUnsafe.user.id;
 
         myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
+        unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
+        window.unityInstance.SendMessage('TELEGRAM', 'MethodName', "123");
 
-        document.body.appendChild(script);
+        // document.body.appendChild(script);
 // 
 
 
