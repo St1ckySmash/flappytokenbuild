@@ -10,7 +10,7 @@
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=2160 height=4560 tabindex="-1" style="width: 2160px; height: 4560px; background: #231F20"></canvas>
     <script src="Build/10test.loader.js"></script>
-    <!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -28,7 +28,12 @@
       }
 
 
+      window.Telegram.WebApp.ready();
 
+      window.Telegram.WebApp.onInitialized(function() {
+        const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
+        console.log("User ID:", userId);
+      });
 
 
 
@@ -45,19 +50,12 @@
         productVersion: "1.0",
       }).then((unityInstance)=>{
         myGameInstance = unityInstance;
-      });
 
-      window.Telegram.WebApp.ready();
-
-      window.Telegram.WebApp.onInitialized(function() {
-        const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
-        console.log("User ID:", userId);
-        if (myGameInstance) {
-          myGameInstance.SendMessage('TELEGRAM', 'MethodName', userId);
-        }
-      });
       myGameInstance.SendMessage('TELEGRAM', 'MethodName', "324");
+      });
 
+
+      
 
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
