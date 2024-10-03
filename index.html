@@ -39,10 +39,10 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       }).then((unityInstance)=>{
 
-        Telegram.WebApp.ready();
-        const user = Telegram.WebApp.initDataUnsafe.user;
+        // Telegram.WebApp.ready();
+        const user = window.Telegram.WebApp.initDataUnsafe.user;
         const userId=user.id
-        
+
         myGameInstance = unityInstance;
         // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "123");
         // myGameInstance.SendMessage('TELEGRAM', 'MethodName', "456");
