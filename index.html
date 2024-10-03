@@ -28,10 +28,19 @@
       }
 
 
+
+   window.Telegram.WebApp.ready();
+
+   const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
+
+   console.log("User ID:", userId);
+
+
+
       var myGameInstance = null;
       // Telegram.WebApp.ready();
       const user = window.Telegram.WebApp.initDataUnsafe.user;
-      var userId=user.id
+      // var userId=user.id
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/10test.data",
